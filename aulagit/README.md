@@ -12,3 +12,18 @@ salvar o estado de um projeto utilizamos em seguida o comando:
 
 O comando `git status` serve para mostrar os arquivos não monitorados no
 repositório, isto é, que ainda não foram adicionados para futuro commit.
+
+O comando `git log` mostra o histórico de commits do repositório.
+
+## git reset
+
+HEAD > commit index > Stage Working Tree > diretório
+
+reset:
+
+--hard: desfaz o commit, volta ao estado em que estava o repositório antes do
+commit desfeito.
+
+--mixed: desfaz o commit, desfaz o stage
+
+--soft: desfaz o commit, stage é mantido e o diretório físico fica inalterado.
