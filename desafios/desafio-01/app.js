@@ -1,4 +1,4 @@
-let acc = 1;
+let acc = 0;
 let auxArray = [];
 
 function createDynamicArray() {
@@ -17,20 +17,24 @@ function play() {
 
 	if (areArraysTheSame(array, auxArray)) {
 		++acc;
-		return console.log(`Porta ${acc}: aberta!`);
-	}
-
-	if (isDoorOpen && acc === 1) {
 		console.log(`Porta ${acc}: aberta!`);
-		auxArray = array;
-	} else {
-		console.log(`Tente de novo!`);
+
+		if (acc > 2) {
+			console.log(`Parabéns você venceu!`);
+			console.log(`Todas as portas foram fechadas!`);
+			acc = 0;
+			auxArray = [];
+			return;
+		}
 	}
 
-	if (acc >= 3) {
-		console.log(`Parabéns você venceu!`);
-		acc = 1;
-		auxArray = [];
+	if (acc < 1) {
+		if (isDoorOpen) {
+			console.log(`Porta ${++acc}: aberta!`);
+			auxArray = array;
+		} else {
+			console.log(`Tente de novo!`);
+		}
 	}
 }
 
