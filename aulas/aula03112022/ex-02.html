@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>TExpert | Aula</title>
+	</head>
+	<body class="bg-zinc-900">
+		<div
+			class="flex py-12 justify-center min-h-screen w-11/12 mx-auto max-w-7xl text-zinc-100">
+			<h1 class="text-3xl">Aula 03/11/2022 - Exercício 2</h1>
+		</div>
+		<script>
+			let nivel = 4;
+			let perfil;
+
+			switch (nivel) {
+				case 0:
+					perfil = "Básico";
+					break;
+				case 1:
+					perfil = "Intermediário";
+					break;
+				case 2:
+					perfil = "Avançado";
+					break;
+				default:
+					perfil = "Inexistente";
+					break;
+			}
+
+			console.log(`Perfil ${nivel}: ${perfil}`);
+		</script>
+	</body>
+</html>
