@@ -2,6 +2,11 @@ let openDoors = 0;
 let auxArray = [];
 let lastTries = null;
 let tries = 0;
+let isGameOver = false;
+
+while (!isGameOver) {
+	play();
+}
 
 function createDynamicArray() {
 	const arr = [];
@@ -40,6 +45,7 @@ function play() {
 		lastTries = tries;
 		tries = 0;
 		auxArray = [];
+		isGameOver = true;
 	}
 }
 
