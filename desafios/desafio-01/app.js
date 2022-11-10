@@ -1,5 +1,7 @@
-let acc = 0;
+let openDoors = 0;
 let auxArray = [];
+let lastTries = null;
+let tries = 0;
 
 function createDynamicArray() {
 	const arr = [];
@@ -13,28 +15,31 @@ function createDynamicArray() {
 function play() {
 	const array = createDynamicArray();
 	console.log(array);
-	const isDoorOpen = array.every((curr, i, arr) => arr[0] === curr);
+	const areArrayElementsTheSame = array.every(
+		(curr, i, arr) => arr[0] === curr
+	);
+	const areArraysEqual = areArraysTheSame(array, auxArray);
 
-	if (areArraysTheSame(array, auxArray)) {
-		++acc;
-		console.log(`Porta ${acc}: aberta!`);
+	if (areArrayElementsTheSame || areArraysEqual) {
+		++openDoors;
 
-		if (acc > 2) {
-			console.log(`Parabéns você venceu!`);
-			console.log(`Todas as portas foram fechadas!`);
-			acc = 0;
-			auxArray = [];
-			return;
-		}
+		console.log(`Porta ${openDoors}: aberta!`);
 	}
 
-	if (acc < 1) {
-		if (isDoorOpen) {
-			console.log(`Porta ${++acc}: aberta!`);
-			auxArray = array;
-		} else {
-			console.log(`Tente de novo!`);
-		}
+	auxArray = array;
+	tries++;
+
+	if (isWinner(openDoors)) {
+		console.log(`Parabéns você venceu!`);
+		console.log(`Tentativas: ${tries}`);
+		lastTries
+			? console.log(`Sua última vitória foi em: ${lastTries} tentativas`)
+			: null;
+		console.log(`Todas as portas foram fechadas!`);
+		openDoors = 0;
+		lastTries = tries;
+		tries = 0;
+		auxArray = [];
 	}
 }
 
@@ -44,6 +49,12 @@ function areArraysTheSame(arr1, arr2) {
 			return false;
 		}
 	}
+
+	return true;
+}
+
+function isWinner(openDoors) {
+	if (openDoors < 3) return false;
 
 	return true;
 }
