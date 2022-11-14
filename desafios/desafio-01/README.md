@@ -18,3 +18,9 @@
 -   [x] Crie uma variável que armazene o valor do último sorteio
 -   [x] Compare o valor do último sorteio com o valor do sorteio atual
 -   [x] Se iguais, escreva: "Porta x: aberta", se diferentes: "Tente novamente"
+
+## Complemento
+
+-   [x] Adiciona condição para testar aplicação
+-   [x] Adiciona variável que armazena número de tentativas da última vitória e
+        da atual

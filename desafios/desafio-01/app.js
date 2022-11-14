@@ -4,8 +4,10 @@ let lastTries = null;
 let tries = 0;
 let isGameOver = false;
 
+/* TESTE */
 while (!isGameOver) {
 	play();
+	lastTries = null;
 }
 
 function createDynamicArray() {
@@ -34,19 +36,7 @@ function play() {
 	auxArray = array;
 	tries++;
 
-	if (isWinner(openDoors)) {
-		console.log(`Parabéns você venceu!`);
-		console.log(`Tentativas: ${tries}`);
-		lastTries
-			? console.log(`Sua última vitória foi em: ${lastTries} tentativas`)
-			: null;
-		console.log(`Todas as portas foram fechadas!`);
-		openDoors = 0;
-		lastTries = tries;
-		tries = 0;
-		auxArray = [];
-		isGameOver = true;
-	}
+	isWinner();
 }
 
 function areArraysTheSame(arr1, arr2) {
@@ -59,8 +49,25 @@ function areArraysTheSame(arr1, arr2) {
 	return true;
 }
 
-function isWinner(openDoors) {
+function isWinner() {
 	if (openDoors < 3) return false;
 
+	console.log(`Parabéns você venceu!`);
+	console.log(`Tentativas: ${tries}`);
+	lastTries
+		? console.log(`Sua última vitória foi em: ${lastTries} tentativas`)
+		: null;
+	console.log(`Todas as portas foram fechadas!`);
+
+	resetGame();
+
 	return true;
+}
+
+function resetGame() {
+	openDoors = 0;
+	lastTries = tries;
+	tries = 0;
+	auxArray = [];
+	isGameOver = true;
 }
