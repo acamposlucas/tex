@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Restaurante</title>
+	</head>
+	<body>
+		<header>
+			<img src="" alt="" />
+			<span>Restaurante</span>
+			<nav>
+				<ul>
+					<li><a href="#sobre">Sobre</a></li>
+					<li><a href="#pratos">Pratos</a></li>
+					<li><a href="#reservas">Reservas</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="sobre" class="sobre">
+				<h2>Sobre nós</h2>
+				<img
+					src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+					alt="Interior do restaurante" />
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Atque iusto ex suscipit assumenda facilis voluptatem
+					necessitatibus distinctio pariatur amet dolores!
+				</p>
+			</section>
+			<section id="pratos">
+				<h2>Nossos pratos</h2>
+				<table>
+					<thead>
+						<th>Prato</th>
+						<th>Descrição</th>
+						<th>Preço</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<img
+									src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+									alt="Bife com batata-frita" />
+							</td>
+							<td>Bife com batata-frita</td>
+							<td>R$29,90</td>
+						</tr>
+						<tr>
+							<td>
+								<img
+									src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+									alt="Tigela com vegetais e carne" />
+							</td>
+							<td>Tigela com vegetais e carne</td>
+							<td>R$29,90</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section id="reservas">
+				<h2>Faça sua reserva</h2>
+				<form action="" method="post">
+					<fieldset>
+						<legend>Informações pessoais</legend>
+						<label for="nome">Nome</label>
+						<input type="text" name="nome" id="nome" />
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email" />
+						<label for="endereco">Endereço</label>
+						<input type="text" name="endereco" id="endereco" />
+					</fieldset>
+					<fieldset>
+						<legend>Sobre a festa</legend>
+						<label for="image">Imagem do aniversariante</label>
+						<input
+							type="file"
+							accept="image/png, image/jpeg"
+							name="image"
+							id="image" />
+						<label for="escolha-entrada"
+							>Escolha uma opção de entrada:</label
+						>
+						<input
+							list="entrada-lista"
+							name="escolha-entrada"
+							id="escolha-entrada" />
+						<datalist id="entrada-lista">
+							<option value="caldo"></option>
+							<option value="salada"></option>
+						</datalist>
+						<select name="opcoes">
+							<optgroup label="Brasileira">
+								<option value="virado">
+									Virado à paulista
+								</option>
+							</optgroup>
+							<optgroup label="Italiana">
+								<option value="Lasagna">Lasagna</option>
+							</optgroup>
+						</select>
+						<label for="data">Data da festa:</label>
+						<input type="date" id="data" name="data" />
+					</fieldset>
+					<fieldset>
+						<legend>Serviços adicionais</legend>
+						<label for="musica">Música ao vivo</label>
+						<input
+							type="checkbox"
+							id="musica"
+							name="servicos"
+							value="Música" />
+						<label for="magico">Mágico</label>
+						<input type="checkbox" id="magico" name="servicos" />
+					</fieldset>
+					<fieldset>
+						<legend>Tipo de bolo</legend>
+						<input
+							type="radio"
+							id="chocolate"
+							name="bolo"
+							value="chocolate" />
+						<label id="chocolate">Chocolate</label>
+						<input
+							type="radio"
+							id="morango"
+							name="bolo"
+							value="morango" />
+						<label id="morango">Morango</label>
+						<input
+							type="radio"
+							id="limao"
+							name="bolo"
+							value="limao" />
+						<label id="limao">Limão</label>
+					</fieldset>
+					<button type="submit">Enviar</button>
+				</form>
+			</section>
+		</main>
+		<footer>
+			<strong>Feito por Lucas</strong>
+		</footer>
+	</body>
+</html>
